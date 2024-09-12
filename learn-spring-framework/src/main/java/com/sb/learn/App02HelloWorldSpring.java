@@ -18,6 +18,12 @@ public class App02HelloWorldSpring {
 		//name - @Bean (method with @Bean annotation)
 		
 		//	3. Retrieving beans managed by spring
-		System.out.println(context.getBean("name"));
+//		System.out.println(context.getBean("name"));
+//		System.out.println(context.getBean("age"));
+//		System.out.println(context.getBean("height"));
+		
+		System.out.println(context.getBean("person"));
+//		System.out.println(context.getBean("address2"));
+		System.out.println(context.getBean("p2"));
 	}
 }
