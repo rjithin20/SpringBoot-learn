@@ -32,8 +32,18 @@ public class HelloWorldConfiguration {
 	}
 	
 	@Bean(name = "p2")
-	public Person person2() {
+	public Person person2MethodCall() {
 		return new Person(name(), age(), address());
+	}
+	
+	@Bean(name = "p3")
+	public Person person3Parameters(String name, int age, Address address3) {
+		return new Person(name, age, address3);
+	}
+
+	@Bean(name = "address3")
+	public Address address3() {
+		return new Address("OTP", 25);
 	}
 	
 	@Bean(name = "address2")
