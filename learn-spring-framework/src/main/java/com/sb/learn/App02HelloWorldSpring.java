@@ -1,5 +1,7 @@
 package com.sb.learn;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.sb.learn.game.GameRunner;
@@ -13,6 +15,7 @@ public class App02HelloWorldSpring {
 		//	1. launch a spring context
 		var context = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
 
+		System.out.println(context.getBean("p2"));//person3MethodCall
 		//	2. configure the things that we want spring to manage - @Configuration
 		// HelloWorldConfiguration -  @Configuration
 		//name - @Bean (method with @Bean annotation)
@@ -24,7 +27,11 @@ public class App02HelloWorldSpring {
 		
 		System.out.println(context.getBean("person"));
 //		System.out.println(context.getBean("address2"));
-		System.out.println(context.getBean("p2"));//person3MethodCall
 		System.out.println(context.getBean("p3"));//person3Parameters
+			
+//		System.out.println();
+		//functional programming
+		Arrays.stream(context.getBeanDefinitionNames())
+			.forEach(System.out::println);
 	}
 }
