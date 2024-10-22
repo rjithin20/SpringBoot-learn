@@ -4,18 +4,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.sb.learn.game.GameRunner;
 import com.sb.learn.game.GamingConsole;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import com.sb.learn.game.PacmanGame;
+
 
 @Configuration
+@ComponentScan("com.sb.learn.game") // will scan for spring components in that particular package
 public class App03GamingSpringBeans {
-	@Bean
-	public GamingConsole game() {
-		var game = new PacmanGame();
-		return game;
-	}
+
 	@Bean
 	public GameRunner gameRunner(GamingConsole game) {
+		System.out.println("Parameter : " + game);
 		var gameRunner = new GameRunner(game);
 		return gameRunner;
 	}
@@ -29,3 +28,5 @@ public class App03GamingSpringBeans {
 		}
 	}
 }
+
+//spring has created an instance of the Pacman game and auto wire it in to the Gaming console
