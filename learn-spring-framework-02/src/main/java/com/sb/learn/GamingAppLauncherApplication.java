@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("com.sb.learn.game") // will scan for spring components in that particular package
-public class App03GamingSpringBeans {
+public class GamingAppLauncherApplication {
 
 	@Bean
 	public GameRunner gameRunner(GamingConsole game) {
@@ -21,7 +21,7 @@ public class App03GamingSpringBeans {
 	public static void main(String[] args) {
 		try(var context = 
 				new  AnnotationConfigApplicationContext
-				(App03GamingSpringBeans.class)){
+				(GamingAppLauncherApplication.class)){
 //			launching the game and game runner as spring beans
 			context.getBean(GamingConsole.class).up();
 			context.getBean(GameRunner.class).run();
