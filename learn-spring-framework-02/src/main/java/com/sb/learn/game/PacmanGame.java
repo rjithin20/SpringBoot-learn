@@ -1,10 +1,12 @@
 package com.sb.learn.game;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 // instance of this Pacman game will be created by Spring
 
 @Component //now this is a component that spring will manage
+@Primary // Marks this as the default GamingConsole
 public class PacmanGame implements GamingConsole{
 
 	@Override
@@ -28,3 +30,7 @@ public class PacmanGame implements GamingConsole{
 	}
 
 }
+
+
+//if no qualifier is specified, PacmanGame will be injected by default 
+//wherever a GamingConsole is required.
