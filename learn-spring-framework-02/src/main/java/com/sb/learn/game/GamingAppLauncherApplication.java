@@ -1,9 +1,7 @@
-package com.sb.learn;
+package com.sb.learn.game;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.sb.learn.game.GameRunner;
-import com.sb.learn.game.GamingConsole;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.sb.learn.game") // will scan for spring components in that particular package
 public class GamingAppLauncherApplication {
 
+	
 	@Bean
 	public GameRunner gameRunner(@Qualifier("marioGame") GamingConsole game) {
 		System.out.println("Parameter : " + game);
