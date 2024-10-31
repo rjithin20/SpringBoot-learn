@@ -1,8 +1,10 @@
 package com.sb.learn.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("marioGame")
+@Component
+@Qualifier("marioGame")
 public class MarioGame implements GamingConsole{
 	@Override
 	public void up() {

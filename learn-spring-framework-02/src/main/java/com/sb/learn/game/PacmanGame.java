@@ -30,7 +30,8 @@ public class PacmanGame implements GamingConsole{
 	}
 
 }
-
+//@Primary specifies this as the default GamingConsole bean if no 
+//specific game is requested
 
 //if no qualifier is specified, PacmanGame will be injected by default 
 //wherever a GamingConsole is required.
